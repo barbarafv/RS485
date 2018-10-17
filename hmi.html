@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 style="font-size:48px">COMANDOS</h1>        <!--Descrição do título com ajuste do tamanho da fonte -->
+<script>
+function slave1(sw)                             // Função para interagir com slave 1 a partir do clique no botão
+ {                          
+    if (sw == 0)                                //Se sw retornar valor zero, acessa o respectivo IP para desligar led
+    {
+        window.open("http://192.168.137.113/desligaled1", "minhaJanela1", "top = 186, left = 300,height=100,width=400");         //abre nova janela com retorno do valor
+    } 
+    else if (sw == 1)                           //Se sw retornar valor um, acessa o respectivo IP para desligar led
+    {
+        window.open("http://192.168.137.113/ligaled1", "minhaJanela1", "top = 186, left = 300, height=100,width=400");
+    }
+    else if (sw == 2)                           //Se sw retornar valor dois, acessa o respectivo IP para ler potenciometro
+    {
+        window.open("http://192.168.137.113/leentrada1", "minhaJanela1", "top = 186, left = 300, height=100,width=400");
+    }
+}
+
+function slave2(sw)                             // Função para interagir com slave 2 a partir do clique no botão
+ {
+    if (sw == 0)                                //Se sw retornar valor zero, acessa o respectivo IP para desligar led
+    {
+        window.open("http://192.168.137.113/desligaled2", "minhaJanela2", "top = 415, left = 300,height=100,width=400");
+    } 
+    else if (sw == 1)                           //Se sw retornar valor um, acessa o respectivo IP para desligar led
+    {
+        window.open("http://192.168.137.113/ligaled2", "minhaJanela2", "top = 415, left = 300, height=100,width=400");
+    }
+    else if (sw == 2)                           //Se sw retornar valor dois, acessa o respectivo IP para desligar led
+    {
+        window.open("http://192.168.137.113/leentrada2", "minhaJanela2", "top = 415, left = 300, height=100,width=400");
+    }
+}
+
+
+</script>
+
+<img id="myImage" src="button_slave.png" y = "100" width="280" height="120">       <!--busca imagem no diretório, que sera utilizada como identificacao do escravo -->
+
+<p>
+<button type="button" onclick="slave1(1)">Ligar LED</button>                 <!--cria botao de nome "Ligar LED" que aciona função quando for clicado -->
+<button type="button" onclick="slave1(0)">Desligar LED</button>              <!--cria botao de nome "Desligar LED" que aciona função de desligamento quando solicitado -->
+<button type="button" onclick="slave1(2)">Potenciômetro</button>             <!--cria botao de nome "Potenciometro" que aciona função de leitura quando solicitado -->
+</p>
+<p><br><br></p>
+
+
+<img id="myImage" src="button_slave2.png" y = "100" width="280" height="120">
+
+<p>
+<button type="button" onclick="slave2(1)">Ligar LED</button>
+<button type="button" onclick="slave2(0)">Desligar LED</button>
+<button type="button" onclick="slave2(2)">Temperatura</button>
+</p>
+
+</body>
+</html>
